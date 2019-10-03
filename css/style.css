@@ -1,0 +1,96 @@
+
+@font-face {
+    font-family: 'jaapokki_subtract';
+    src: url('../font/jaapokkisubtract-regular.eot');
+    src: url('../font/jaapokkisubtract-regular.eot?#iefix') format('embedded-opentype'),
+         url('../font/jaapokkisubtract-regular.woff') format('woff'),
+         url('../font/jaapokkisubtract-regular.ttf') format('truetype'),
+         url('../font/jaapokkisubtract-regular.svg#jaapokki_subtract') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+  margin: 0;
+  padding: 0;     
+}
+body{
+  height: 100vh;
+  position: relative;
+}
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transition: transform 1s;
+  display: none;
+}
+
+.container.move{
+  transform: translate(-50%, -220%);
+}
+.svg-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 120px;  
+  height:60px;
+}
+.shape {
+  stroke-dasharray: 40 320;
+  stroke-dashoffset: -220;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #333;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: jaapokki_subtract;
+  font-size: 40px;
+  letter-spacing: -12px;
+  color: #000;
+  top: -60px;
+  position: relative;
+  font-weight: 700;
+  left: -5px;
+}
+.svg-wrapper.active .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 360;
+}
+.logo span{
+  font-family: jaapokki_subtract;
+  font-size: 72px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s, visibility 1s;
+}
+.logo span.visible {
+  visibility: visible;
+  opacity: 1;
+}
+.left-black{
+  background: #000;
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  transition: width 2s ease-out;
+}
+.right-black{
+  background: #000;
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: width 2s ease-out;
+}
+.left-black.open{
+  width: 0;
+}
+.right-black.open{
+  width: 0;
+}
